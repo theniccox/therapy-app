@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2E8B57;
+  --primary-dark: #1F6E43;
+  --primary-light: #4CAF7D;
+  --secondary: #FF6B6B;
+  --accent: #FFD166;
+  --background: #F5F0E6;
+  --surface: #FFFFFF;
+  --text: #333333;
+  --text-light: #666666;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary-dark text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-secondary-dark text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-md;
+}
+
+.card {
+  @apply bg-surface rounded-2xl shadow-lg overflow-hidden border-0;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.select-field {
+  @apply w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.checkbox-field {
+  @apply h-5 w-5 text-primary focus:ring-primary border-gray-300 rounded;
+}
+
+.tag {
+  @apply bg-primary-light/20 text-primary-dark text-xs px-3 py-1 rounded-full font-medium;
+}
+
+.tag-online {
+  @apply bg-secondary/20 text-secondary text-xs px-3 py-1 rounded-full font-medium;
+}
+
+/* Artistic elements */
+.blob-shape {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(40px);
+}
+
+.blob-1 {
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: var(--primary-light);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: blob-morph 15s ease-in-out infinite;
+}
+
+.blob-2 {
+  bottom: 10%;
+  right: 5%;
+  width: 250px;
+  height: 250px;
+  background: var(--secondary);
+  border-radius: 50% 60% 70% 30% / 30% 40% 60% 70%;
+  animation: blob-morph 18s ease-in-out infinite reverse;
+}
+
+.blob-3 {
+  top: 40%;
+  right: 15%;
+  width: 200px;
+  height: 200px;
+  background: var(--accent);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: blob-morph 20s ease-in-out infinite;
+}
+
+@keyframes blob-morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  75% {
+    border-radius: 60% 40% 30% 60% / 60% 40% 60% 40%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Modern UI elements */
+.gradient-text {
+  @apply font-bold;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.pattern-bg {
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232E8B57' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
