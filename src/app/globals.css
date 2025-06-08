@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@400;700&display=swap');
-
 body {
-  @apply font-sans bg-background text-gray-800;
+  @apply bg-background text-black font-sans;
 }
 
 h1, h2, h3 {
-  @apply font-serif;
+  @apply font-serif text-darkGreen;
+}
+
+.tile {
+  @apply bg-white rounded-tile p-6 shadow-md hover:shadow-xl transition-shadow duration-300;
+}
+
+.bg-tile-green {
+  background-color: #2A7F62;
+  color: white;
+}
+
+.bg-accent-green {
+  background-color: #00A878;
+  color: white;
+}
+
+.bg-dark-green {
+  background-color: #1C2826;
+  color: white;
+}
+
+.button-accent {
+  @apply bg-accentRed text-white px-4 py-2 rounded-full hover:bg-red-600 transition;
+}
+
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('/fonts/ZillaSlab-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
 }

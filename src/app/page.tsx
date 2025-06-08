@@ -1,44 +1,61 @@
-// src/app/page.tsx
-import Card from '@/components/Card'
-import { Sparkles, Heart, User, BookOpen } from 'lucide-react'
+'use client'
+
+import Link from 'next/link'
+import { useEffect } from 'react'
+import { FaUserFriends, FaComments, FaHeart } from 'react-icons/fa'
 
 export default function Home() {
+  useEffect(() => {
+    // Optional entry animation logic if needed
+  }, [])
+
   return (
-    <main className="min-h-screen bg-background text-gray-800">
-      <header className="text-center py-16 bg-gradient-to-br from-brand-light to-brand">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold text-brand-dark animate-fadeIn">
-          Find the Right Therapist for You
-        </h1>
-        <p className="mt-4 text-lg md:text-xl text-brand-dark animate-fadeIn delay-200">
-          Accessible, affordable, and stigma-free mental health support.
+    <main className="min-h-screen bg-background p-6 font-sans text-black">
+      <header className="text-center py-12 animate-fadeIn">
+        <h1 className="text-4xl md:text-6xl font-serif text-darkGreen mb-4">Find the Right Therapist</h1>
+        <p className="text-lg text-gray-700 max-w-xl mx-auto">
+          Discover therapists that truly understand you – for your mind, your culture, and your life.
         </p>
       </header>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-6 py-12">
-        <Card
-          icon={<User className="w-6 h-6 text-brand" />}
-          title="Browse Therapists"
-          description="Explore a curated list of professionals tailored to your needs."
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fadeIn">
+        <Tile
+          icon={<FaUserFriends size={36} />}
+          title="Accessible Therapy"
+          description="Browse a wide range of affordable and culturally sensitive therapists."
+          bg="bg-tile-green"
         />
-
-        <Card
-          icon={<Heart className="w-6 h-6 text-brand" />}
-          title="Track Your Mood"
-          description="Keep a personal log to understand your emotional patterns."
+        <Tile
+          icon={<FaComments size={36} />}
+          title="No Stigma"
+          description="Your mental health journey is valid. Find someone who gets it."
+          bg="bg-accent-green"
         />
-
-        <Card
-          icon={<BookOpen className="w-6 h-6 text-brand" />}
-          title="Resources"
-          description="Helpful guides, articles, and practices for your journey."
-        />
-
-        <Card
-          icon={<Sparkles className="w-6 h-6 text-brand" />}
-          title="Safe & Secure"
-          description="We prioritise privacy. Your data stays yours."
+        <Tile
+          icon={<FaHeart size={36} />}
+          title="Care That Connects"
+          description="Therapists who see the full you – not just a list of symptoms."
+          bg="bg-dark-green"
         />
       </section>
+
+      <div className="text-center mt-12">
+        <Link href="/browse" passHref>
+          <button className="button-accent animate-pulseSlow">
+            Start Exploring
+          </button>
+        </Link>
+      </div>
     </main>
+  )
+}
+
+function Tile({ icon, title, description, bg }: { icon: JSX.Element; title: string; description: string; bg: string }) {
+  return (
+    <div className={`tile ${bg}`}>
+      <div className="mb-4">{icon}</div>
+      <h2 className="text-xl font-serif mb-2">{title}</h2>
+      <p className="text-sm">{description}</p>
+    </div>
   )
 }

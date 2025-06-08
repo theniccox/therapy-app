@@ -1,35 +1,36 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        brand: {
-          light: '#004100',
-          DEFAULT: '#7c9a77',
-          dark: '#4e644d',
-        },
-        accent: '#b6a393',
-        background: '#f9f9f4',
+        background: '#EBEBD3',
+        darkGreen: '#1C2826',
+        tileGreen: '#2A7F62',
+        accentGreen: '#00A878',
+        accentRed: '#D64550',
+      },
+      borderRadius: {
+        tile: '1rem',
       },
       fontFamily: {
+        serif: ['"Montague Slab"', 'serif'],
         sans: ['Inter', 'sans-serif'],
-        serif: ['Lora', 'serif'],
       },
       animation: {
-        fadeIn: 'fadeIn 0.6s ease-out forwards',
+        pulseSlow: 'pulse 4s ease-in-out infinite',
+        fadeIn: 'fadeIn 2s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        }
-      }
-    }
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
+    },
   },
   plugins: [],
 }
