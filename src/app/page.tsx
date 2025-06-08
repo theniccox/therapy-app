@@ -9,7 +9,7 @@ export default function Home() {
 
       <header className="relative z-10 mb-12 text-center">
         <h1 className="text-4xl sm:text-5xl font-sans font-bold tracking-tight text-brand-dark mb-4">
-          SENS
+          SENS APP
         </h1>
         <p className="text-lg sm:text-xl text-foreground/80 font-sans">
           Our mission: Create a world where accessible, affordable, and stigma-free mental health support is the norm.
