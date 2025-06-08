@@ -53,7 +53,7 @@ export default function Home() {
 
       <div className="relative z-10 flex justify-center gap-4 flex-wrap">
         <a
-          href="/therapists"
+          href="/search"
           className="px-6 py-3 rounded-full bg-brand text-white font-medium hover:bg-brand-dark transition animate-pulseIn"
         >
           Browse Therapists
