@@ -8,11 +8,11 @@ export default function Home() {
       <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-brand-light rounded-full opacity-20 blur-3xl animate-pulseIn z-0" />
 
       <header className="relative z-10 mb-12 text-center">
-        <h1 className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-brand-dark mb-4">
-          Find the Right Therapist for You
+        <h1 className="text-4xl sm:text-5xl font-sans font-bold tracking-tight text-brand-dark mb-4">
+          SENS
         </h1>
         <p className="text-lg sm:text-xl text-foreground/80 font-sans">
-          Accessible, affordable, and stigma-free mental health support.
+          Our mission: Create a world where accessible, affordable, and stigma-free mental health support is the norm.
         </p>
       </header>
 
@@ -59,10 +59,10 @@ export default function Home() {
           Browse Therapists
         </a>
         <a
-          href="/resources"
+          href="/questionnaire"
           className="px-6 py-3 rounded-full border border-brand text-brand font-medium hover:bg-brand-light transition"
         >
-          View Resources
+          Take Our Questionnaire
         </a>
       </div>
     </main>
