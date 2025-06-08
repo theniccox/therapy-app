@@ -1,44 +1,63 @@
 // src/app/page.tsx
-import Card from '@/components/Card'
-import { Sparkles, Heart, User, BookOpen } from 'lucide-react'
+'use client'
+
+import { HeartIcon, UserIcon, ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-gray-800">
-      <header className="text-center py-16 bg-gradient-to-br from-brand-light to-brand">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold text-brand-dark animate-fadeIn">
+    <main className="relative min-h-screen bg-gradient-to-br from-brand-light to-brand px-6 py-12 text-foreground font-sans">
+      {/* Floating background shape */}
+      <div className="absolute top-[-120px] left-[-120px] w-[300px] h-[300px] bg-brand-light rounded-full opacity-20 blur-3xl animate-pulseIn z-0" />
+
+      <header className="relative z-10 mb-12 text-center">
+        <h1 className="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-brand-dark mb-4">
           Find the Right Therapist for You
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-brand-dark animate-fadeIn delay-200">
+        <p className="text-lg sm:text-xl text-foreground/80 font-sans">
           Accessible, affordable, and stigma-free mental health support.
         </p>
       </header>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-6 py-12">
-        <Card
-          icon={<User className="w-6 h-6 text-brand" />}
-          title="Browse Therapists"
-          description="Explore a curated list of professionals tailored to your needs."
-        />
+      <section className="relative z-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-16">
+        <div className="p-6 rounded-lg bg-white shadow-card hover:shadow-glow transition duration-300">
+          <HeartIcon className="w-8 h-8 text-brand animate-pulseIn mb-4" />
+          <h3 className="text-xl font-semibold text-brand-dark mb-1">Track Your Mood</h3>
+          <p className="text-sm text-foreground/80">
+            Keep a log to understand and reflect on your emotions.
+          </p>
+        </div>
 
-        <Card
-          icon={<Heart className="w-6 h-6 text-brand" />}
-          title="Track Your Mood"
-          description="Keep a personal log to understand your emotional patterns."
-        />
+        <div className="p-6 rounded-lg bg-white shadow-card hover:shadow-glow transition duration-300">
+          <UserIcon className="w-8 h-8 text-brand animate-pulseIn mb-4" />
+          <h3 className="text-xl font-semibold text-brand-dark mb-1">Find a Therapist</h3>
+          <p className="text-sm text-foreground/80">
+            Search by therapy type, location, or personal preferences.
+          </p>
+        </div>
 
-        <Card
-          icon={<BookOpen className="w-6 h-6 text-brand" />}
-          title="Resources"
-          description="Helpful guides, articles, and practices for your journey."
-        />
-
-        <Card
-          icon={<Sparkles className="w-6 h-6 text-brand" />}
-          title="Safe & Secure"
-          description="We prioritise privacy. Your data stays yours."
-        />
+        <div className="p-6 rounded-lg bg-white shadow-card hover:shadow-glow transition duration-300">
+          <ChatBubbleOvalLeftIcon className="w-8 h-8 text-brand animate-pulseIn mb-4" />
+          <h3 className="text-xl font-semibold text-brand-dark mb-1">Learn and Grow</h3>
+          <p className="text-sm text-foreground/80">
+            Read resources to better understand mental wellbeing.
+          </p>
+        </div>
       </section>
+
+      <div className="relative z-10 flex justify-center gap-4 flex-wrap">
+        <a
+          href="/therapists"
+          className="px-6 py-3 rounded-full bg-brand text-white font-medium hover:bg-brand-dark transition animate-pulseIn"
+        >
+          Browse Therapists
+        </a>
+        <a
+          href="/resources"
+          className="px-6 py-3 rounded-full border border-brand text-brand font-medium hover:bg-brand-light transition"
+        >
+          View Resources
+        </a>
+      </div>
     </main>
   )
 }
