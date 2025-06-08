@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SearchParams } from '@/lib/therapists';
-import { TherapistCard } from '@/components/TherapistCard';
+import TherapistCard from '@/components/TherapistCard';
+
 
 export default function Search() {
   const [searchParams, setSearchParams] = useState<SearchParams>({

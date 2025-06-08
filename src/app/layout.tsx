@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import './globals.css';
 import { PWAInstall } from '@/components/PWAInstall';
 
 export default function RootLayout({
